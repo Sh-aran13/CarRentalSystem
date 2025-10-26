@@ -36,6 +36,7 @@
         <url-pattern>/bookCar</url-pattern>
     </servlet-mapping>
 
+    <!-- UPI QR & pseudo payments (servlet for showing payment page) -->
     <servlet>
         <servlet-name>CustomerPaymentServlet</servlet-name>
         <servlet-class>controller.CustomerPaymentServlet</servlet-class>
@@ -45,6 +46,7 @@
         <url-pattern>/CustomerPaymentServlet</url-pattern>
     </servlet-mapping>
 
+    <!-- Optional: Payment status checking for polling (if you still use it) -->
     <servlet>
         <servlet-name>CheckPaymentStatusServlet</servlet-name>
         <servlet-class>controller.CheckPaymentStatusServlet</servlet-class>
@@ -54,6 +56,15 @@
         <url-pattern>/checkPaymentStatus</url-pattern>
     </servlet-mapping>
 
+    <!-- Main normal gateway servlet (handles fake payment success/fail form submit) -->
+    <servlet>
+    <servlet-name>CompletePaymentServlet</servlet-name>
+    <servlet-class>controller.CompletePaymentServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>CompletePaymentServlet</servlet-name>
+    <url-pattern>/completePayment</url-pattern>
+</servlet-mapping>
     <servlet>
         <servlet-name>AdminBookingsServlet</servlet-name>
         <servlet-class>controller.AdminBookingsServlet</servlet-class>

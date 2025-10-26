@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
                 res.addCookie(emailCookie);
 
                 Cookie roleCookie = new Cookie("userRole", user.getRole());
-                roleCookie.setMaxAge(60*60*24*7);
+                roleCookie.setMaxAge(60*60*24);
                 roleCookie.setHttpOnly(true);
                 roleCookie.setPath("/");
                 res.addCookie(roleCookie);
